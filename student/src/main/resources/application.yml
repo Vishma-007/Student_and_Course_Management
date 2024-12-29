@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: Driver
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/student  # H2 in-memory database URL
+    username: root                       # Default username for H2
+    password: pass@word1                         # No password for H2 by default
+    driver-class-name: com.mysql.cj.jdbc.Driver  # H2 driver class
+    #dialect: org.hibernate.dialect.H2Dialect  # Hibernate dialect for H2
+
+  jpa:
+    hibernate:
+      ddl-auto: update                                 # Automatically update the schema
+      dialect: org.hibernate.dialect.MySQL8Dialect     # Use MySQL 8 dialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true       # Show SQL queries in the logs
+
+  h2:
+    console:
+      enabled: false   # Enable the H2 console to access it in the browser
+      # Access path for H2 console
+
+server:
+  port: 9098  # The port on which your application will run
